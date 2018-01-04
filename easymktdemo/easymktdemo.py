@@ -39,7 +39,8 @@ class EasyMKTDemo():
     def process_notification(self,notification):
 
         if notification.category == Notification.NotificationCategory.MKTDATA:
-            print("Event: " + Notification.NotificationType.as_text(notification.type) + "\tSource: " + notification.source.name)
+            #print("Event: " + Notification.NotificationType.as_text(notification.type) + "\tSource: " + notification.source.name)
+            print("Event: " + notification.type.name + "\tSource: " + notification.source.name)
             for fc in notification.field_changes:
                 print("\tField: " + fc.field.name() + "\t " + fc.old_value + " -> " + fc.new_value)    
 
